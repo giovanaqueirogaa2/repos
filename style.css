@@ -1,60 +1,72 @@
-/* Seletor universal: aplica estilos a todos os elementos da página */
+/* Variáveis CSS (Custom Properties) */
+:root {
+  --cor-principal: #007bff;
+  --cor-fundo: #f4f4f4;
+  --cor-texto: #333;
+  --cor-hover: #0056b3;
+  --espacamento-padrao: 10px;
+  --espacamento-maior: 20px;
+}
+
+/* Estilos Globais */
 * {
-    box-sizing: border-box; /* Garante que o padding e a borda sejam incluídos na largura e altura totais do elemento */
-    margin: 0; /* Remove as margens padrão dos elementos */
-    padding: 0; /* Remove o preenchimento padrão dos elementos */
-  }
-  
-  /* Estilos para o corpo da página */
-  body {
-    font-family: sans-serif; /* Define a fonte padrão para a página */
-    line-height: 1.5; /* Define o espaçamento entre linhas */
-    background-color: #f4f4f4; /* Define a cor de fundo da página */
-    color: #333; /* Define a cor do texto padrão */
-  }
-  
-  /* Estilos para cabeçalhos (títulos) */
-  h1, h2, h3 {
-    margin-bottom: 10px; /* Adiciona uma margem inferior aos títulos */
-    color: #007bff; /* Define a cor dos títulos */
-  }
-  
-  /* Estilos para parágrafos */
-  p {
-    margin-bottom: 20px; /* Adiciona uma margem inferior aos parágrafos */
-  }
-  
-  /* Estilos para links */
-  a {
-    color: #007bff; /* Define a cor dos links */
-    text-decoration: none; /* Remove o sublinhado padrão dos links */
-  }
-  
-  a:hover {
-    text-decoration: underline; /* Adiciona um sublinhado aos links quando o mouse passa por cima */
-  }
-  
-  /* Estilos para listas não ordenadas */
-  ul {
-    list-style: none; /* Remove os marcadores padrão das listas */
-    margin-bottom: 20px; /* Adiciona uma margem inferior às listas */
-  }
-  
-  /* Estilos para itens de lista */
-  li {
-    margin-bottom: 5px; /* Adiciona uma margem inferior aos itens de lista */
-  }
-  
-  /* Estilos para botões */
-  button {
-    background-color: #007bff; /* Define a cor de fundo dos botões */
-    color: #fff; /* Define a cor do texto dos botões */
-    padding: 10px 20px; /* Define o preenchimento interno dos botões */
-    border: none; /* Remove a borda padrão dos botões */
-    border-radius: 5px; /* Adiciona bordas arredondadas aos botões */
-    cursor: pointer; /* Muda o cursor para uma mãozinha ao passar o mouse por cima */
-  }
-  
-  button:hover {
-    background-color: #0056b3; /* Escurece a cor de fundo dos botões ao passar o mouse por cima */
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+/* Estilos de Texto */
+h1, h2, h3 {
+  margin-bottom: var(--espacamento-padrao);
+  color: var(--cor-principal);
+}
+
+p {
+  margin-bottom: var(--espacamento-maior);
+}
+
+a {
+  color: var(--cor-principal);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos de Listas */
+ul {
+  list-style: none;
+  margin-bottom: var(--espacamento-maior);
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+/* Estilos de Botões */
+button {
+  background-color: var(--cor-principal);
+  color: #fff;
+  padding: var(--espacamento-padrao) var(--espacamento-maior);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Adiciona uma transição suave */
+}
+
+button:hover {
+  background-color: var(--cor-hover);
+}
+
+button:focus {
+  outline: 2px solid var(--cor-principal); /* Adiciona um foco visual */
+  outline-offset: 2px;
+}
